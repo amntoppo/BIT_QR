@@ -19,4 +19,8 @@ io.on('connection', function(socket) {
       io.sockets.emit('chat', data);
       console.log(data.message);
     });
+
+    socket.on('press', function(data) {
+      socket.broadcast.emit('press', data);
+    });
 });
